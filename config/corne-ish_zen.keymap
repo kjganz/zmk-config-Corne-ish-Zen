@@ -12,7 +12,7 @@
 #define DEFAULT 0
 #define LOWER   1
 #define RAISE   2
-#define ADJST  3
+// #define ADJST   3
 
 / {
         keymap {
@@ -24,7 +24,7 @@
    &kp TAB   &kp Q &kp W &kp F &kp P &kp G   &kp J &kp L  &kp U    &kp Y   &kp SEMI    &kp BSPC
    &kp LCTRL &kp A &kp R &kp S &kp T &kp D   &kp H &kp N  &kp E    &kp I   &kp O       &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp K &kp M  &kp COMM &kp DOT &kp FSLH    &kp ESC
-   &kp LGUI &lt LOWER BSPC &lt RAISE SPACE   &lt LOWER RET &lt RAISE &kp RALT
+   &kp LGUI &lt LOWER BSPC &lt RAISE SPACE   &lt LOWER RET &lt RAISE TAB &kp RALT
                         >;
                 };
 
@@ -41,28 +41,28 @@
                 raise_layer {
                         label = "RAISE";
                         bindings = <
-   &trans  &trans   &kp HOME  &kp UP    &kp END   &trans   &mo ADJST &kp LBKT  &kp RBKT  &trans    &kp CAPS  &trans
-   &trans  &trans   &kp LEFT  &kp DOWN  &kp RIGHT &trans   &trans    &kp LBRC  &kp RBRC  &trans    &kp SQT   &trans
-   &trans  &trans   &trans    &kp PG_DN &kp PG_UP &trans   &trans    &trans    &trans    &trans    &trans    &trans
-                    	      &trans    &trans    &trans   &trans    &trans    &trans
+   &trans  &trans    &kp HOME  &kp UP    &kp END   &trans   &mo ADJST &kp LBKT  &kp RBKT  &trans    &kp CAPS  &trans
+   &trans  &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans   &trans    &kp LBRC  &kp RBRC  &trans    &kp SQT   &trans
+   &trans  &trans    &trans    &kp PG_DN &kp PG_UP &trans   &trans    &trans    &trans    &trans    &trans    &trans
+                    	       &trans    &trans    &trans   &trans    &trans    &trans
                         >;
                 };
 
-                adjust_layer {
-                        label = "ADJUST";
-                        bindings = <
-   &reset     &none        &none        &none        &none        &none           &none &none &none &none &none &none 
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &none &kp K &none &none &none &none
-   &none      &none        &none        &none        &none        &none           &none &none &none &none &none &none
-                                        &trans       &trans       &trans          &trans &trans &trans
-                        >;
-                };
-        };
-        conditional_layers {
-                compatible = "zmk,conditional-layers";
-                tri_layer {
-                        if-layers = <LOWER RAISE>;
-                        then-layer = <ADJST>;
-                };
-        };
+//                 adjust_layer {
+//                         label = "ADJUST";
+//                         bindings = <
+//    &reset     &none        &none        &none        &none        &none          &none &none &none &none &none &none 
+//    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none &kp K &none &none &none &none
+//    &none      &none        &none        &none        &none        &none          &none &none &none &none &none &none
+//                                         &trans       &trans       &trans         &trans &trans &trans
+//                         >;
+//                 };
+//         };
+//         conditional_layers {
+//                 compatible = "zmk,conditional-layers";
+//                 tri_layer {
+//                         if-layers = <LOWER RAISE>;
+//                         then-layer = <ADJST>;
+//                 };
+//         };
 };
