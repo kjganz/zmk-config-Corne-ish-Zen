@@ -14,7 +14,7 @@
 #define RAISE   2
 #define ADJST   3
 
-#define HYPR    LGUI | LSHFT | LCTRL | LALT
+#define HYPR    LC(LS(LG(LALT)))
 
 / {
         keymap {
