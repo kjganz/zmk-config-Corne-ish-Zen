@@ -24,47 +24,47 @@
    &kp TAB   &kp Q &kp W &kp F &kp P &kp G   &kp J &kp L  &kp U     &kp Y   &kp SEMI    &kp BSPC
    &kp LCTRL &kp A &kp R &kp S &kp T &kp D   &kp H &kp N  &kp E     &kp I   &kp O       &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp K &kp M  &kp COMMA &kp DOT &kp FSLH    &kp RSHFT
-                &trans    &trans    &trans   &trans    &trans    &trans
-//    &kp LGUI &lt LOWER BSPC &lt RAISE SPACE   &lt LOWER RET &lt RAISE TAB &kp RALT
+             &kp LGUI &lt LOWER BSPC &lt RAISE SPACE   &lt LOWER RET &lt RAISE TAB &kp RALT
                         >;
                 };
 
-//                 lower_layer {
-//                         label = "LOWER";
-//                         bindings = <
-//    &trans  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT &kp CARET &kp AMPS  &kp STAR  &kp MINUS &kp EQUAL &trans
-//    &trans  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
-//    &trans  &trans    &trans    &kp LPAR  &kp RPAR  &kp GRAVE &kp BSLH  &kp MINUS &kp EQUAL &trans    &trans    &trans
-//                                &trans    &trans    &trans    &trans    &trans    &trans
-//                         >;
-//                 };
+                lower_layer {
+                        label = "LOWER";
+                        bindings = <
+   &trans  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT &kp CARET &kp AMPS  &kp STAR  &kp MINUS &kp EQUAL &trans
+   &trans  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
+   &trans  &trans    &trans    &kp LPAR  &kp RPAR  &kp GRAVE &kp BSLH  &kp MINUS &kp EQUAL &trans    &trans    &trans
+                               &trans    &trans    &trans    &trans    &trans    &trans
+                        >;
+                };
 
-//                 raise_layer {
-//                         label = "RAISE";
-//                         bindings = <
-//    &trans  &trans    &kp HOME  &kp UP    &kp END   &trans   &mo ADJST &kp LBKT  &kp RBKT  &trans    &kp CAPS  &trans
-//    &trans  &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans   &trans    &kp LBRC  &kp RBRC  &trans    &kp SQT   &trans
-//    &trans  &trans    &trans    &kp PG_DN &kp PG_UP &trans   &trans    &trans    &trans    &trans    &trans    &trans
-//                     	       &trans    &trans    &trans   &trans    &trans    &trans
-//                         >;
-//                 };
+                raise_layer {
+                        label = "RAISE";
+                        bindings = <
+   &trans  &trans    &kp HOME  &kp UP    &kp END   &trans   &mo ADJST &kp LBKT  &kp RBKT  &trans    &kp CAPS  &trans
+   &trans  &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans   &trans    &kp LBRC  &kp RBRC  &trans    &kp SQT   &trans
+   &trans  &trans    &trans    &kp PG_DN &kp PG_UP &trans   &trans    &trans    &trans    &trans    &trans    &trans
+                    	       &trans    &trans    &trans   &trans    &trans    &trans
+                        >;
+                };
 
-//                 adjust_layer {
-//                         label = "ADJUST";
-//                         bindings = <
-//    &reset     &none        &none        &none        &none        &none          &none &none &none &none &none &none 
-//    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none &kp K &none &none &none &none
-//    &none      &none        &none        &none        &none        &none          &none &none &none &none &none &none
-//                                         &trans       &trans       &trans         &trans &trans &trans
-//                         >;
-//                 };
+                adjust_layer {
+                        label = "ADJUST";
+                        bindings = <
+   &reset     &none        &none        &none        &none        &none          &none &none &none &none &none &none 
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none &kp K &none &none &none &none
+   &none      &none        &none        &none        &none        &none          &none &none &none &none &none &none
+                                        &trans       &trans       &trans         &trans &trans &trans
+                        >;
+                };
 
+        }; // END KEYMAP
+
+        conditional_layers {
+                compatible = "zmk,conditional-layers";
+                tri_layer {
+                        if-layers = <LOWER RAISE>;
+                        then-layer = <ADJST>;
+                };
         };
-//         conditional_layers {
-//                 compatible = "zmk,conditional-layers";
-//                 tri_layer {
-//                         if-layers = <LOWER RAISE>;
-//                         then-layer = <ADJST>;
-//                 };
-//         };
 };
